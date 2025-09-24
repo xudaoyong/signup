@@ -1,0 +1,13 @@
+<h2>兴趣班报名</h2>
+{% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+<form method="POST">
+  姓名: <input type="text" name="student_name" required><br>
+  班级: <input type="text" name="classroom" required><br>
+  选择兴趣班:
+  <select name="class_id">
+    {% for c in classes %}
+      <option value="{{ c[0] }}">{{ c[1] }} ({{ c[2] }}/{{ c[3] }})</option>
+    {% endfor %}
+  </select><br>
+  <input type="submit" value="报名">
+</form>

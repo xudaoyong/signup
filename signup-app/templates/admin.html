@@ -1,0 +1,14 @@
+<h2>管理员后台</h2>
+<a href="/admin/add">新增兴趣班</a><br><br>
+<table border=1>
+<tr><th>ID</th><th>兴趣班</th><th>上限</th><th>已报名</th><th>操作</th></tr>
+{% for c in classes %}
+<tr>
+<td>{{ c[0] }}</td>
+<td>{{ c[1] }}</td>
+<td>{{ c[2] }}</td>
+<td>{{ c[3] }}</td>
+<td><a href="/admin/delete/{{ c[0] }}">删除</a></td>
+</tr>
+{% endfor %}
+</table>
